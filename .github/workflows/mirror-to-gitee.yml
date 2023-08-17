@@ -1,0 +1,11 @@
+name: Mirror to Gitee
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+jobs:
+  mirror-to-gitee:
+    uses: ./.github/workflows/template-mirror.yml
+    secrets: inherit
