@@ -19,7 +19,7 @@ export interface ProgressProps {
   className?: string;
 }
 
-const Progress: React.FC<ProgressProps> = (props) => {
+export const Progress: React.FC<ProgressProps> = (props) => {
   const {
     percentage,
     strokeHeight,

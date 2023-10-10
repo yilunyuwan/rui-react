@@ -6,6 +6,7 @@ import classNames from "classnames";
 type TabsType = "line" | "card";
 
 export interface TabsProps {
+  /** 设置默认高亮选项 */
   defaultIndex?: number;
   type?: TabsType;
   onSelect?: (index: number) => void;
@@ -27,7 +28,7 @@ export const TabsContext = React.createContext<ITAbsContext>({
   selectedIndex: defaultProps.defaultIndex,
 });
 
-const Tabs: React.FC<TabsProps> = (props) => {
+export const Tabs: React.FC<TabsProps> = (props) => {
   const {
     defaultIndex = defaultProps.defaultIndex,
     type = defaultProps.type,
