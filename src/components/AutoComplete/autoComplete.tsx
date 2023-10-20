@@ -44,12 +44,12 @@ const AutoComplete: React.FC<AutoCompleteProps> = (props) => {
       setIsLoading(true);
       results
         .then((data) => {
-          setIsLoading(false);
           if (data.length) {
             setSuggestions(data);
           } else {
             setOptionListVisible(false);
           }
+          setIsLoading(false);
         })
         .catch((error) => {
           setIsLoading(false);

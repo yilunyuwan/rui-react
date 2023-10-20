@@ -34,15 +34,15 @@ export const OptionList = forwardRef<HTMLUListElement, OptionListProps>(
     const isVisible = (visible && !!suggestions.length) || isLoading;
 
     const setTransitionHeight = (element: HTMLElement) => {
-      const height = element.offsetHeight;
+      const height = window.getComputedStyle(element).height;
       const transition = element.style.transition;
       element.style.transition = "";
       element.style.height = "auto";
-      const targetHeight = element.offsetHeight;
-      element.style.height = height + "px";
+      const targetHeight = window.getComputedStyle(element).height;
+      element.style.height = height;
       element.style.transition = transition;
       requestAnimationFrame(() => {
-        element.style.height = targetHeight + "px";
+        element.style.height = targetHeight;
       });
     };
 
